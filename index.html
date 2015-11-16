@@ -15,11 +15,70 @@
         <div class="nojs">Javascript is either disabled or not supported in your browser. Please enable it or use a Javascript enabled browser</div>
     </nonscript>
     <main class="container-fluid outermain">
-        <h1>Testing</h1>
+      <div class="col-md-12">
+            <img class='center' src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Foursquare-logo.png" alt="">
+        </div>
+        <section class='outermain padding' id='branding'>
+        <p class="lead">A FourSquare API integration</p>
+        </section>
+         <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="#"><b>Placify</b></a>
+              </div>
+            </div>
+        </nav>
+        <div class="animated zoomInRight center col-md-6">
+            <div class="input-group">
+              <input type="text" class="form-control" ng-model="search" ng-change="change()" onclick="select()" placeholder="Search for a place">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Go!</button>
+              </span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <p class="lead">Simply type in a desirable location and Placify will find you Foursquare's recommend venues along with their contact numbers(if any) and their facebook likes.</p>
+        </div>
+        <section class='col-md-12 generalMargin' id='main-info'>
+            <div ng-if="!details">
+                <img src="http://www.arabianbusiness.com/skins/ab.main/gfx/loading_spinner.gif" alt="">
+            </div>
+                <div ng-repeat='group in details.groups'>
+                <h3>{{group.type}}</h3>
+            <table class="table">
+                 <tbody class="table-striped" >
+                <tr>
+                    <th>Venue</th>
+                    <th>Contact</th>
+                    <th>Rating</th>
+                    <th align="right">Likes</th>    
+                </tr>
+                <tr ng-repeat='item in group.items'>
+                    <td>
+                        {{item.venue.name}}
+                    </td>
+                    <td>
+                      <span class="label label-primary">
+
+                      {{item.venue.contact.phone}}
+
+                      </span>
+                    </td>
+                    <td>
+                        <span class='label label-success'>{{item.venue.rating}}</span>
+                    </td>
+                    <td align="likes">
+                        <span class='btn btn-default btn-xs btn-info'>{{item.venue.stats.usersCount}}</span>
+                    </td>
+                </tr>
+                </tbody>                
+            </table>
+        </div>
+            <div ng-if="eggs.Response==='False'">
+              No results found.
+            </div>
+        </section>
     </main>
-<script src="bower_components/modernizr/bin/modernizr.js"></script>
-<script src='js/jquery.js'></script>
-<script src='js/angular.js'></script>
- <script src='js/core.js'></script>
+ <script src='dist/all.js'></script>
     </body>
 </html>
