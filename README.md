@@ -7,4 +7,6 @@ I am using gulp and bower as my build tool and componenent managment.
 
 Instagram and Google Maps API integration in progress
 
+http://codepen.io/AntonioVassilev/pen/YyBqRq
+
 
