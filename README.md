@@ -1,12 +1,10 @@
-# andDigital
-A repo created for the andDigital test
+A API integration showcasing the power of Foursquare - combined with Angular, Bootstrap and Animate.css
 
-Please find my implementation of the test requirments in this test repo
-
-I have used Angular along with bootstrap and animate.css to interact with the API and style out the page and add some animations. 
 
 The sample app returns the list of reccomended venues along with their contact number if any and their facebook likes.
 
 I am using gulp and bower as my build tool and componenent managment.
+
+Instagram and Google Maps API integration in progress
 
 
